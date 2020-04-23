@@ -188,7 +188,7 @@ int main()
                             printf(" + ");
                             if (wenjian == 1)
                             {
-                                fprintf(fp, " + ");
+                                fprintf(fp, " - ");
                             }
                             break;
                         }
@@ -277,4 +277,5 @@ int main()
         }
     }
     fclose(fp);
+    return 0；
 }
