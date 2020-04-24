@@ -53,7 +53,7 @@ int main()
     {
         system("cls");
     }
-    if (start == 2)
+    if (start != 1)
     {
         return 0;
     }
@@ -104,7 +104,7 @@ int main()
         cout << "是否需要/，1为需要，2为不需要。" << endl;
         cin >> yunsuanfu[3];
     }
-    cout << "输入有无括号：1为有，0为无。" << endl;
+    cout << "是否需要括号，1为需要，2为不需要。" << endl;
     cin >> kuohao;
     while (kuohao != 1 && kuohao != 2)
     {
@@ -194,7 +194,7 @@ int main()
                             printf(" + ");
                             if (wenjian == 1)
                             {
-                                fprintf(fp, " - ");
+                                fprintf(fp, " + ");
                             }
                             break;
                         }                       
@@ -256,3 +256,4 @@ int main()
     fclose(fp);
     return 0;
 }
+
