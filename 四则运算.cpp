@@ -25,6 +25,7 @@ int main()
     int j;
     int flag1 = 1;
     int flag2 = 0;
+    int flag3 = 0;
     printf("///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n");
     printf("///////// ////////   /////// //          // //////////      /////      //////  ////////   //////           ////////////\n");
     printf("////////// ////// /// ///// /// /////////// ///////// ///////// //////// /// // ////// /// ///// //////////////////////\n");
@@ -119,7 +120,7 @@ int main()
         cout << "是否需要输出到文件，1为需要，2为不需要。" << endl;
         cin >> wenjian;
     }
-    cout << "生成"<<num<<"道题目如下：" << endl;
+    cout << "生成" << num << "道题目如下：" << endl;
     //srand((unsigned)time(NULL));
     if ((fp = fopen("E:\\yunsuan.txt", "w")) == NULL)   //将表达式写入到文件
     {
@@ -180,31 +181,27 @@ int main()
             flag1 = 0;
             if (j != qnum)
             {
-                yunsuanfuxz = rand() % 4;
-                switch (yunsuanfuxz)
+                flag3 = 0;
+                while (flag3 != 1)
                 {
+                    yunsuanfuxz = rand() % 4;
+                    switch (yunsuanfuxz)
+                    {
                     case 0:
                         if (yunsuanfu[0] == 1)
                         {
+                            flag3 = 1;
                             printf(" + ");
                             if (wenjian == 1)
                             {
                                 fprintf(fp, " - ");
                             }
                             break;
-                        }
-                        else
-                        {
-                            printf(" + ");
-                            if (wenjian == 1)
-                            {
-                                fprintf(fp, " + ");
-                            }
-                            break;
-                        }
+                        }                       
                     case 1:
                         if (yunsuanfu[1] == 1)
                         {
+                            flag3 = 1;
                             printf(" - ");
                             if (wenjian == 1)
                             {
@@ -212,18 +209,11 @@ int main()
                             }
                             break;
                         }
-                        else
-                        {
-                            printf(" + ");
-                            if (wenjian == 1)
-                            {
-                                fprintf(fp, " + ");
-                            }
-                            break;
-                        }
+                        
                     case 2:
                         if (yunsuanfu[2] == 1)
                         {
+                            flag3 = 1;
                             printf(" * ");
                             if (wenjian == 1)
                             {
@@ -231,18 +221,11 @@ int main()
                             }
                             break;
                         }
-                        else
-                        { 
-                            printf(" + ");
-                            if (wenjian == 1)
-                            {
-                                fprintf(fp, " + ");
-                            }
-                            break;
-                        }
+                        
                     case 3:
                         if (yunsuanfu[3] == 1)
                         {
+                            flag3 = 1;
                             printf(" / ");
                             if (wenjian == 1)
                             {
@@ -250,15 +233,8 @@ int main()
                             }
                             break;
                         }
-                        else
-                        {
-                            printf(" + ");
-                            if (wenjian == 1)
-                            {
-                                fprintf(fp, " + ");
-                            }
-                            break;
-                        }
+                        
+                    }
                 }
             }
         }
