@@ -119,6 +119,7 @@ int main()
         cout << "是否需要输出到文件，1为需要，2为不需要。" << endl;
         cin >> wenjian;
     }
+    cout << "生成"<<num<<"道题目如下：" << endl;
     //srand((unsigned)time(NULL));
     if ((fp = fopen("E:\\yunsuan.txt", "w")) == NULL)   //将表达式写入到文件
     {
